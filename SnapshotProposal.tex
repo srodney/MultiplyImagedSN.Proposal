@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The template begins here. Please do not modify the font size from 12 point.
+
+\documentclass[12pt]{article}
+\usepackage{phase1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  PREAMBLE: sets up compiler modes, loads packages, defines macros, etc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{preamble}
+
+\begin{document}
+
+%   1. SCIENTIFIC JUSTIFICATION
+%       (see Section 9.1 of the Call for Proposals)
+%
+%
+\justification          % Do not delete this command.
+% Enter your scientific justification here. 
+\input{justification}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   2. DESCRIPTION OF THE OBSERVATIONS
+%       (see Section 9.2 of the Call for Proposals)
+%
+%
+\describeobservations   % Do not delete this command.
+% Enter your observing description here.
+\input{observations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   3. SPECIAL REQUIREMENTS
+%       (see Section 9.3 of the Call for Proposals)
+%
+%
+\specialreq             % Do not delete this command.
+% Justify your special requirements here, if any.
+\input{specialreq}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   4. COORDINATED OBSERVATIONS
+%       (see Section 9.4 of the Call for Proposals)
+%
+%
+%\coordinatedobs          % Do not delete this command.
+% Enter your coordinated observing plans here, if any.
+%\input{coordinatedobs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   5. JUSTIFY DUPLICATIONS
+%       (see Section 9.5 of the Call for Proposals)
+%
+%
+\duplications           % Do not delete this command.
+% Enter your duplication justifications here, if any.
+\input{duplications}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Bibliography goes in before or after PAST HST usage ??
+%  Probably before, since it has to be counted in the text page limit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\smallskip
+\newpage
+\setlength{\bibsep}{-2pt}
+\begin{spacing}{0.5}
+\bibliographystyle{apjbrief}
+{\footnotesize
+\bibliography{bibdesk}
+}
+\end{spacing}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   7. FIGURES AND TABLES  (must appear after the text)
+\input{figures}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   6. PAST HST USAGE
+%       (see Section 9.8 of the Call for Proposals)
+%
+%        List here the program numbers and data status for all accepted GO/AR/SNAP 
+%        programs of the PI in at least the last four HST Cycles. Include a list of refereed publications 
+%        resulting from these programs.       
+%
+%       Note that the description of past HST usage  DOES NOT count against the page limits of the proposal.
+%
+
+%\pagebreak
+\newpage
+\pasthstusage  % Do not delete this command.
+\input{pasthstusage}
+
+
+\end{document}          % End of proposal. Do not delete this line.
+                        % Everything after this command is ignored.
+
