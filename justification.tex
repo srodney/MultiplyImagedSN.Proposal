@@ -13,28 +13,43 @@ galaxies, it will of course be multiply-imaged itself.  With that SN
 we could measure a time delay distance with better than 6\%
 precision, providing a unique and powerful
 constraint on \Ho\ and dark energy.  With deep template imaging for
-over 25 rich clusters in hand, {\bf \it we now have a viable pathway
-to discover that first multiply-imaged SN with a small, single-cycle
+over 25 rich clusters in hand, {\bf \em we now have a viable pathway
+to discover the first ever multiply-imaged SN with a small, single-cycle
 snapshot program.}
 
 
-\subsection{Time Delay Cosmography}
+\medskip
+\noindent {\bf Time Delay Cosmography}
 
 As light from a distant source passes through a galaxy cluster,
 strong gravitational lensing causes multiple images to appear to the
 observer, with a time separation between the images given by
 
-\begin{equation}\label{eq:dt}
-  \dt = \frac{\Dl \Ds}{\Dls} ( 1 + z_l ) \phi
-\end{equation}
 
-\noindent where \Dl, \Ds, and \Dls\ are angular diamater distances from 
-the observer to the lens, observer to source, and lens to source,
-respectively. The redshift of the lens is $z_l$, and $\phi$ is the
-time delay potential, which includes a geometric component due to
-light rays following different path lengths to the observer, plus a
-general relativistic component due to differing values of the
-gravitational potential along each path.
+\vspace{-5mm}
+\begin{tabular}{p{5.5cm}r}
+% \dt = \frac{\Dl \Ds}{\Dls} ( 1 + z_l ) \phi
+{\begin{align}
+%\begin{equation}\label{eq:dt}
+ %  \dt = \frac{\Dl \Ds}{\Dls} ( 1 + z_l ) \phi
+%\end{equation}
+  \dt &= \frac{\Dl \Ds}{\Dls} ( 1 + z_l ) \phi \label{eq:dt} \\
+  \phi &= \frac{1}{2}(\theta-\beta)^2 - \psi(\theta) \label{eq:phi}
+\end{align}}
+&
+\hspace{1cm}
+\raisebox{-30mm}{\includegraphics[width=0.5\textwidth]{FIG/lensingGeometry}}
+\end{tabular}
+
+
+\noindent where the redshift of the lens is $z_l$, while \Dl, \Ds, 
+and \Dls\ are angular diamater distances from the observer to the
+lens, observer to source, and lens to source, respectively.  The time
+delay potential, $\phi$, is given in Eq.~\ref{eq:phi}. The first term
+gives the geometric delay due to light rays following different path
+lengths to the observer, and the second term, $\psi$, is the
+relativistic component due to differing values of the gravitational
+potential along each path.
 
 Each of the distances in Equation~\ref{eq:dt} carries a factor
 of \Ho$^{-1}$, so if the lensing potential $\phi$ is well known, then a
@@ -44,51 +59,158 @@ unusual sensitivities to cosmological parameters as a function of
 redshift that make this technique a particularly useful probe of
 dynamic dark energy models \citep{Linder:2011}.
 
-\citep{Refsdal:1964} first proposed the use of SN time delays as 
-a means to measure \Ho.  Now 50 years later, we have only just begun
-to realize the potential in this technique with the recent
-measurement of a few dozen {\it quasar} time
-delays \citep{Jackson:2007}, including just a handful with
-particularly high precision \citep{Suyu:2010,Suyu:2013}.  These quasar
-lenses generally suffer from a number of serious concerns, notably:
-(1) the lensing potential (typically a single foreground galaxy) is
-poorly constrained; (2) the time delays and angular separations are
-quite small (tens of days, fractions of an arcsecond); and (3) the
-source is continuously variable, requiring many years of stable
-monitoring to resolve phase degeneracies.  Wide-field surveys in the
-coming decade could deliver $>$100 quasar time delays, but these
-problems represent unavoidable systematic biases for this sample.
+\citet{Refsdal:1964} first proposed the use of SN time delays as 
+a means to measure \Ho.  Now 50 years later, this has not yet been
+achieved, primarily due to the small number of very well analyzed
+gravitational lenses ($\sim$dozens), and the short visibility window
+for any given high-$z$ SN event ($\sim$a few weeks).  Only recently
+have we begun to realize the potential in this technique with the
+recent measurement of a few dozen time delays of quasars, being lensed
+typically by a single foreground galaxy \citep{Jackson:2007}. Among
+these, only a handful have time delays measured with particularly high
+precision \citep[e.g.]{Suyu:2010,Suyu:2013}.  These quasar lenses
+generally suffer from a number of serious concerns, notably: (1) the
+lensing potential is poorly constrained due to inherent degeneracies
+and insufficient constraints; (2) the time delays and angular
+separations are quite small (tens of days, fractions of an arcsecond);
+and (3) the source is continuously variable, requiring many years of
+stable monitoring to resolve phase degeneracies.  Wide-field surveys
+in the coming decade could deliver $>$100 quasar time delays, but
+these problems represent unavoidable systematic biases for this
+sample.
+
+Furthermore, with a cluster lens and SN source {\bf \em we will open up
+the possibility of measuring independent distances to both
+components.}  Cluster distances can be estimated using the
+Sunyaev-Zeldovich effect and x-ray cluster
+luminosities \citep{Silk:1978}.  If the SN is of Type Ia (a likely
+prospect), then light curve fitting can provide a luminosity distance
+measurement with $\sim$8\% precision \citep{Phillips:1993}.  A
+multiply-imaged \SNIa\ would therefore be a unique chance to apply the
+distance-duality test: comparing the luminosity distance $D_{S}^{(L)}$
+inferred from light curve fitting against the angular diameter
+distance $D_{S}^{(A)}$ derived from the time delay.  If the ratio
+$\eta_{DD} = D_{S}^{(L)} / ( D_{S}^{(A)}(1+z_S)^2 )$ deviates from
+unity, then this would signal systematic errors in one or more
+distances, or a fundamental flaw in the concordance cosmology.
+
+
+\medskip
+\noindent {\bf HST Getting Better with Age}
  
+In Cycle 22, HST has just achieved a new capability for the discovery
+of a strongly-lensed SN. The first key advancement was the
+availability of WFC3-IR, which allows HST imaging surveys to capture
+high-$z$ SN at the peak of ther SED profile in rest-frame optical
+bands \citep{Rodney:2012,Jones:2013}.  Ground-based surveys and even
+HST/ACS programs have searched for multiply-imaged SN in the past, but
+none have had the capability to detect even highly magnified SN at
+$z>2$ \citep[e.g.][]{Dawson:2009,Sand:2011}.  With WFC3-IR, \Hubble\
+now has access to a much larger survey volume with each pointing.
 
-This snapshot program will open the door for a much cleaner time delay
-distance measurement with the discovery of a strongly lensed SN behind
-a galaxy cluster.  We will target well-studied, massive clusters that
-all have dozens of known multiple-image systems, meaning that the
-lensing potentials $\phi$ are exquisitely well defined.  Typical time
-delays through these clusters are months or years, allowing for more
-precise measurement of \dt, with ample time to prepare for the
-appearance of the second image.   A SN also provides
-an inherently better time-delay source: the SN light curve has a
-single peak, so there is no potential for phase ambiguity, and the age
-of a SN relative to explosion can be precisely defined from light
-curve shape and color, or from spectroscopic
+A WFC3-IR program targeting massive clusters, such as CLASH or the
+Hubble Frontier Fields, could in principal have caught a strongly
+lensed SN already, but in practice the likelihood of such a find was
+vanishingly small.  The CLASH team collected WFC3-IR imaging of 25
+clusters over 3-years, but the time separation between the first and
+last image on any single cluster was never more than a few months.
+However, these programs -- along with other WFC3-IR cluster imaging
+campaigns -- have now provided the second critical advance: deep IR
+template imaging of massive clusters from which to construct
+difference images for SN discovery.  These HST programs have also led
+to an explosion of detailed mass modeling for strong-lensing clusters,
+providing well-defined lensing potentials that will be crucial for
+evaluating a multiply-imaged SN when one is found.  
+
+Our snapshot program will capatalize on this rich new treasury of IR
+cluster imaging in the HST archive, opening the door for a pioneering
+time delay distance measurement with the discovery of one or more
+strongly lensed SN behind a galaxy cluster.  We will target
+well-studied massive clusters that act as especially strong lenses,
+all with dozens of known multiply-imaged galaxies
+(Table~\ref{tab:clusters}).  {\bf \em The SN we discover behind these
+clusters will be inherently better time-delay sources} than the
+existing sample of quasars.  Typical time delays through our target
+clusters are months or years (not days or weeks as for many lensed
+quasars), allowing for more precise measurements of \dt, with ample
+time to prepare for the appearance of the second image.  Also, the SN
+light curve has a single peak, so there is no potential for phase
+ambiguity, and the age of a SN relative to explosion can be precisely
+defined from light curve shape and color, or from spectroscopic
 cross-correlation \citep{Filippenko:1997,Blondin:2007} -- so the time
-delay measurement does not require continuous long-term monitoring.  
+delay measurement does not require continuous long-term monitoring.
 
-Furthermore, with a cluster lens and SN source there is the
-possibility of measuring independent distances to both components.
-Cluster distances can be estimated using the Sunyaev-Zeldovich effect
-and x-ray cluster luminosities \citep{Silk:1978}.  If the SN is of
-Type Ia (a likely prospect), then light curve fitting can provide a
-luminosity distance measurement with $\sim$8\%
-precision \citep{Phillips:1993}.  A multiply-imaged \SNIa\ would also
-be a unique chance to apply the distance-duality test: comparing the
-luminosity distance $D_{s}^{(L)}$ inferred from light curve fitting
-against the angular diameter distance $D_{s}^{(A)}$ derived from the
-time delay.  If the ratio
-$\eta_{DD} = D_{s}^{(L)} / ( D_{s}^{(A)}(1+z_s)^2 )$
-deviates from unity, then this would signal systematic errors in one or
-more distances, or a fundamental flaw in the concordance cosmology. 
+
+The lenses in our target list are also much better than existing
+time-delay lenses.  For all of our potential targets we have
+state-of-the-art lens models in
+hand \citep[e.g.][]{Zitrin:2011a,Zitrin:2011b,Zitrin:2012a,Zitrin:2012b,Zitrin:2013}.
+The large angular separations between our lensed sources and their
+unlensed sight-lines will allow for very precise astrometry that is
+free of systematics due to source blending.  Together, these
+advantages will provide much better constraints on the lensing
+potential ($\phi(\theta,\beta)$, Eq.~\ref{eq:phi}).  This
+fore-knowledge will also be crucial for quickly evaluating any lensed
+SN candidates we discover, to weed out impostors before investing
+precious follow-up time.
+
+
+\medskip
+\noindent {\bf Maximizing Search Efficiency}
+
+Typical SN light curves for strongly lensed SN of Type Ia and II are shown in Fig \ref{fig:lightcurves}
+
+Visibility time for \SNIa and II is shown in Fig \ref{fig:tvis}
+
+SN rate per unit mass \citep{Mannucci:2005}
+
+high star formation rate at z$\sim$2
+
+typical galaxy mass at z$\sim$2
+
+Calculating the expected number of SN per 200 snapshots
+
+factor in ~30\% completion.
+
+Conservative estimate, because  
+ (1) this only counts the lensed galaxies we see.  SN could be found
+ in as-yet-unseen lensed dwarf galaxies. 
+ (2) 
+
+
+
+Follow-up observations will come from outside this program. 
+This program only does discovery.
+HST DD time would be needed for immediate confirmation and classification.
+With magnification, most lensed SN we might discover (and their hosts)
+would be observable with large ground-based telescopes (using
+ground-based DD time)   allowing us to get precise spectroscopic
+redshifts of the source if needed.
+
+We request to waive the proprietary period, and plan to announce all
+     candidate strongly lensed SN discoveries immediately to the
+     community through ATEL.
+
+Other discoveries of interest that do not rise to the level of DD time (e.g. SN with mu~2 but no multiple images) could be followed up with our FrontierSN program using HST/Gemini/VLT/Keck
+
+
+
+
+Secondary science : 
+    we could find lensed SN Ia with significant magnification that do not have multiple images, adding to the sample of SN lensing probes (Patel+ 2014, Nordin+ 2014)
+      again, classification and light curve measurement could be done with FrontierSN follow-up orbits
+
+
+
+\input{clusterTable}
+
+
+\insertfig{FIG/lightcurves.pdf}{ \label{fig:lightcurves} Lensed SN
+    light curves }
+
+\insertfig{FIG/tvis_muz_30min.pdf}{\label{fig:tvis} Visibility time
+for lensed SN. }
+
 
 
 
