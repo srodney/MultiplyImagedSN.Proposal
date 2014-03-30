@@ -1,3 +1,18 @@
+# Figure development extras
+*pyc
+*log
+*input
+*simlib
+*dat
+*txt
+
+
+# backups 
+*~
+*backup
+\#*\#
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

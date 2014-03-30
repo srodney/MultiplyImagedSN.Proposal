@@ -1,4 +1,4 @@
-MultiplyImagedSN.Proposal
-=========================
+snapshotSLSN
+============
 
 HST Cycle 22 snapshot proposal
