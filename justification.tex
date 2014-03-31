@@ -161,53 +161,96 @@ and can be made with minimal systematic uncertainties.
 
 
 \medskip
-\noindent {\bf Maximizing Search Efficiency}
+\noindent {\bf The HST Snapshot Search Strategy }
 
-Typical SN light curves for strongly lensed SN of Type Ia and II are shown in Fig \ref{fig:lightcurves}
+Since Cycle 17, HST surveys of strong lensing clusters (notably CLASH
+and the Frontier Fields) have been investing hundreds of orbits in deep
+WFC3-IR imaging.  With these templates in hand, the most efficient
+way to discover high-$z$ strongly lensed SN is through a relatively
+small snapshot program.    To estimate the number of snapshots we
+need, we use a tabulation of the number of known multiply-imaged
+galaxies in the fields of our target clusters
+(Table~\ref{tab:clusters}).  This is a conservative approach, as it is
+quite possible to detect a multiply-imaged SN even if the host galaxy
+is well below the current detection thresholds for these cluster
+fields. The total yield of strongly-lensed SN per snapshot is then
 
-Visibility time for \SNIa and II is shown in Fig \ref{fig:tvis}
+\begin{equation} \label{eq:Nsn}
+N_{SN} = SNR_{M} \times M_{gal} \times N_{gal} \times t_{vis},
+\end{equation}
 
-SN rate per unit mass \citep{Mannucci:2005}
+\noindent where $SNR_{M^*}$ is the SN rate per unit mass, $M_{gal}$ is
+the average mass of a multiply-imaged galaxy, $N_{gal}$ is the number
+of multiply imaged galaxies in the field, and $t_{vis}$ is the length
+of time that any given SN is visible to our snapshot survey.  Most of
+the lensed systems in our target list are at $z\sim 2$, in an era near
+the peak of the cosmic star formation history. This should substantially
+enhance the rate of both Type Ia and Type II SN, but we conservatively
+assume that our average lensed galaxy is generating SN at a rate
+similar to an Sb galaxy in our local universe: $SNR_{M} \sim 0.1$ for
+both \SNIa\ and SN II \citep{Mannucci:2005}.  We adopt an average
+stellar mass of $M_{gal}=10^{10.7} \Msun$ \citep{Tomczak:2013}, and
+use the census of multiply-imaged systems in Table~\ref{tab:clusters}
+to predict an average of $N_{gal}\sim 35$ lensed galaxy images per
+cluster.\footnote{Note that we count each separate image of a
+multiple-image set except the last one (typically the most highly
+magnified).  The time delay between each image is of order months or
+years, so each snapshot is essentially observing the same galaxy at
+multiple widely-spaced epochs that can be treated as independent for
+the purpose of SN discovery. The last image is not counted because we
+can not measure a time delay from the last appearance of a
+multiply-imaged SN.}
 
-high star formation rate at z$\sim$2
+%\begin{wrapfigure}{r}{0.3\textwidth}
+%\minipage[r]{0.29\textwidth}
+   \input{detectionLimits}
+%\end{minipage}
+%\end{wrapfigure}
 
-typical galaxy mass at z$\sim$2
+To maximize the flexibility for scheduling, we consider snapshots with
+12, 20 and 30 minutes of exposure time ($\sim$22, 30, and 40 min with
+overhead).  These snapshots reach a depth of 25-26 AB mag in the F110W
+and F140W filters (Table~\ref{tab:detectionLimits}).  To describe a
+realistic distribution of SN visibility times, $t_{vis}$, we use a
+census of magnifications and redshifts from all multiply-imaged
+galaxies in three of our primary cluster targets
+(Figure~\ref{fig:tvis}).  We then use simulated SN light curves to
+measure the length of time each SN stays above our detection
+threshold, finding an average $t_{vis}\sim 30$ days for \SNIa\ and
+$\sim$20 days for SN II.
 
-Calculating the expected number of SN per 200 snapshots
+Inserting these estimates into Eq.~\ref{eq:Nsn}, we find $N_{SN}\sim
+0.02$ SN per snapshot, including both Type Ia and II.  To give this
+program a realistic chance at discovering a strongly lensed SN in
+Cycle 22, we request 200 snapshots, which would yield a sample of
+$\sim 4 ^{+3}_{-2}$ SN in one year if all snaps were executed.  With a
+realistic snapshot execution rate of $\sim$30\%, that sample drops to
+$\sim$one.  These are perilously small sample sizes, but given the
+conservative estimates used in this prediction, we expect that a
+200-snap allocation will be sufficient to deliver at least one
+strongly lensed SN in Cycle 22.  Even just a single detection will
+nevertheless be an extraordinary step forward for time delay
+cosmography. 
 
-factor in ~30\% completion.
-
-Conservative estimate, because  
- (1) this only counts the lensed galaxies we see.  SN could be found
- in as-yet-unseen lensed dwarf galaxies. 
- (2) 
-
-
-
-Follow-up observations will come from outside this program. 
-This program only does discovery.
-HST DD time would be needed for immediate confirmation and classification.
-With magnification, most lensed SN we might discover (and their hosts)
-would be observable with large ground-based telescopes (using
-ground-based DD time)   allowing us to get precise spectroscopic
-redshifts of the source if needed.
-
-We request to waive the proprietary period, and plan to announce all
-     candidate strongly lensed SN discoveries immediately to the
-     community through ATEL.
-
-Other discoveries of interest that do not rise to the level of DD time (e.g. SN with mu~2 but no multiple images) could be followed up with our FrontierSN program using HST/Gemini/VLT/Keck
+Finally, we note that this snapshot program is designed only for
+discovery. Follow-up observations will come from accompanying GO
+program, using 12 orbits with ToO observations for immediate
+confirmation of a SN candidate and measurement of the light curve.
+Sometime in the future, a return campaign to catch the next image
+would be needed to complete the time delay measurement, using HST,
+ground-based AO systems, or possibly JWST, depending on the length of
+the delay.
 
 
+\medskip
+\noindent{\bf Lensed \SNIa\ Probing Cluster Models} 
+We could find lensed SN Ia with significant magnification that do not
+have multiple images, adding to the sample of SN lensing probes
+(Patel+ 2014, Nordin+ 2014).  Classification and light curve
+measurement could be done with FrontierSN follow-up orbits
 
 
-Secondary science : 
-    we could find lensed SN Ia with significant magnification that do not have multiple images, adding to the sample of SN lensing probes (Patel+ 2014, Nordin+ 2014)
-      again, classification and light curve measurement could be done with FrontierSN follow-up orbits
-
-
-
-\input{clusterTable}
+\input{clusterTableColor}
 
 
 \insertfig{FIG/lightcurves.pdf}{ \label{fig:lightcurves} Lensed SN

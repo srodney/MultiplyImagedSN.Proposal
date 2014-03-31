@@ -1,20 +1,18 @@
-\begin{deluxetable}{llllcl}
-\tablecolumns{6}
-\tablecaption{Cluster Target List\label{tab:clusters}}
-\tablehead{
-  \colhead{Cluster}                       & 
-  \colhead{R.A.}                          & 
-  \colhead{Decl.}                         & 
-  \colhead{z}                             & 
-  \colhead{N$_{im}$\tablenotemark{*}} & 
-  \colhead{References} }
-\startdata
-
+\begin{table}
+\caption{Cluster Target List\label{tab:clusters}}
+\begin{tabu}{llllcl}
+\toprule
+\toprule
+Cluster & R.A. & Decl. & z & N$_{im}$ $^*$ & References \\
+\midrule
+\rowfont{\color{blue}}
 Abell 2744\dag & 00:14:23.4 & -30:23:26 & 0.31 & 43  & Merten et al. 2011                                         \\
 CL0024         & 00:26:35.0 & +17:09:43 & 0.39 & 20  & Zitrin et al. 2009a                                        \\
 El Gordo       & 01:02:52.5 & -49:14:58 & 0.87 & 11  & Zitrin et al. 2013b                                        \\
+\rowfont{\color{blue}}
 Abell 370\dag  & 02:39:52.8 & -01:34:36 & 0.37 & 36  & Richard et al. 2009, ZFF                                   \\
 Abell 383      & 02:48:03.4 & -03:31:44 & 0.19 & 18  & Zitrin et al. 2011b                                        \\
+\rowfont{\color{blue}}
 MACS0416\dag   & 04:16:08.4 & -24:04:21 & 0.40 & 36  & Zitrin et al. 2013                                         \\
 MACS0647       & 06:47:50.3 & +70:14:55 & 0.58 & 20  & Zitrin et al. 2011, Coe et al. 2013                        \\
 Bullet-a       & 06:58:37.9 & -55:57:00 & 0.3  & 10  & Bradac et al. **                                           \\
@@ -23,9 +21,13 @@ MACS0717-a     & 07:17:35.6 & +37:44:44 & 0.55 & 18  & Zitrin et al. 2009b, Limo
 MACS0717-b     & 07:17:35.6 & +37:44:44 & 0.55 & 18  & Zitrin et al. 2009b, Limousin et al. 2012, Z14             \\
 MACS0744       & 07:44:52.8 & +39:27:24 & 0.70 & 14  & Zitrin et al. 2011; 2014 in prep                           \\
 Abell 611      & 08:00:56.8 & +36:03:23 & 0.21 & 12  & Newman et al. 2013, Z14                                    \\
+\rowfont{\color{blue}}
 MACS1149\dag   & 11:49:35.7 & +22:23:55 & 0.54 & 29  & Zitrin  \&  Broadhurst 2009, Zheng et al. 2012             \\
+\rowfont{\color{blue}}
 MACS1206\dag   & 12:06:12.1 & -08:48:04 & 0.44 & 33  & Ebeling et al. 2009, Zitrin et al. 2012                    \\
+\rowfont{\color{blue}}
 Abell 1689\dag & 13:11:34.2 & -01:21:56 & 0.19 & 117 & Broadhurst et al. 2005, Coe et al. 2010, Diego et al. 2014 \\
+\rowfont{\color{blue}}
 Abell 1703\dag & 13:15:03.7 & +51:49:27 & 0.28 & 36  & Limousin et al. 200*, Zitrin et al. 2010                   \\
 RXJ1347        & 13:47:31.1 & -11:45:12 & 0.45 & 14  & K\"ohlinger \&  Schmidt 2014                               \\
 MS1358         & 13:59:48.7 & +62:30:48 & 0.33 & 13  & Zitrin et al. 2011c                                        \\
@@ -34,8 +36,9 @@ Abell 2218     & 16:35:54.0 & +66:13:00 & 0.18 & 18  & Kneib et al. 2004        
 Abell 2261     & 17:22:27.2 & +32:07:57 & 0.22 & 18  & Coe et al. 2012                                            \\
 MACS1931       & 19:31:49.6 & -26:34:32 & 0.35 & 10  & Z14                                                        \\
 MACS2129       & 21:29:26.1 & -07:41:28 & 0.57 & 14  & Zitrin et al. 2011; Z14                                    \\
+\rowfont{\color{blue}}
 RXJ2248\dag    & 22:48:44.0 & -44:31:51 & 0.35 & 28  & Monna et al. 2013                                          \\
-
+\bottomrule
 % MACS0329   & 03:29:41.6 & -02:11:46 & 0.45 & 11 & Zitrin et al. 2012, Z14                       \\
 % MACS0451   & 04:51:54.6 & +00:06:17 & 0.43 & 11                                                 \\
 % MACS0454   & 04:54:11.1 & -03:00:53 & 0.54 & 11 & Zitrin et al. 2011                            \\
@@ -45,20 +48,17 @@ RXJ2248\dag    & 22:48:44.0 & -44:31:51 & 0.35 & 28  & Monna et al. 2013        
 % Abell 2390 & 21:53:55.8 & +17:43:34 & 0.23 & 7  & Frye et al. 1998                              \\
 % MS2137     & 21:40:15.2 & -23:39:40 & 0.31 & 7  & Newman et al. 2013, Z14                       \\
 % RXJ2129    & 21:29:40.0 & +00:05:21 & 0.23 & 9  & Richard et al. 2010, Z14                      \\
-
-\enddata
-
-\tablenotetext{*}{ Approximate number of known strongly-lensed galaxy images
-  within the WFC3-IR FOV, counting all instances of each lensed galaxy
-  except the last (i.e. all independent lensed galaxy images that
-  could deliver a SN time delay measurement).}
-\tablenotetext{\dagger}{ Primary targets. We will allocate more
-  snapshots to these clusters that have especially strong lenses with
-  many multiply-imaged galaxies and particularly good lens models.
-  The unweighted average $N_{im}$ is $\sim$25, but we expect this
-  weighted snapshot allocation to result in an actual mean of
-  $N_{im}\sim 35$.}
-
+%\enddata
+ \multicolumn{6}{p{\textwidth}}{* Approximate number of known strongly-lensed galaxy images
+   within the WFC3-IR FOV, counting all instances of each lensed galaxy
+   except the last (i.e. all independent lensed galaxy images that
+   could deliver a SN time delay measurement).}\\
+ \multicolumn{6}{p{\textwidth}}{ \textcolor{blue}{$\dagger$ Primary targets.} We will allocate more
+   snapshots to these clusters that have especially strong lenses with
+   many multiply-imaged galaxies and particularly good lens models.
+   The unweighted average $N_{im}$ is $\sim$25, but we expect this
+   weighted snapshot allocation to result in an actual mean of
+   $N_{im}\sim 35$.}\\
 %\tablenotetext{**}{ Key or latest references for the multiple image
 %  compilation in each cluster. Z14 stands for ``Zitrin et al. 2014 in
 %  prep" is a soon to be public paper describing our high-end mass
@@ -67,4 +67,5 @@ RXJ2248\dag    & 22:48:44.0 & -44:31:51 & 0.35 & 28  & Monna et al. 2013        
 %  list of the Frontier Fields map making groups, for which Co-PI
 %  Zitrin has contributed significantly for revising the multiple
 %  images.}
-\end{deluxetable}
+\end{tabu}
+\end{table}

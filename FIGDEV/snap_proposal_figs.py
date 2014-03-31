@@ -448,6 +448,38 @@ def plot_pkmags_AB( simIa ):
     Mtxt = ax.text( 2.9, 32.2, 'F105W', backgroundcolor='w', ha='center', va='center', color='darkorchid' )
 
 
+def print_Nleading( obsdat=_datfile):
+    """Print the number of leading images from our catalog of
+    multiply-imaged galaxies. i.e. count up all the instances of
+    multiple images in each system, except the last one, from which we
+    could not measure a time delay.
+    """
+    # Read in the A1689 multiply imaged galaxy catalog
+    if isinstance( obsdat, str ) :
+        obsdat = ascii.read(obsdat)
+    igal = obsdat['gal']
+    zobs = np.abs(obsdat['z'])  # negative z's are photoz
+    muobs = obsdat['mu']
+    idx = obsdat['idx'] - 1
+
+    # isolate the leading images (any images that
+    # have later images from which a time delay
+    # could be measured.
+    muTD, zTD = [], []
+    muLast, zLast = [], []
+    for ig in np.unique(igal):
+        idx_thisgal = idx[np.where(igal == ig)]
+        mu_thisgal = sorted( muobs[idx_thisgal] )
+        muTD += mu_thisgal[:len(mu_thisgal)-1]
+        zTD += zobs[idx_thisgal][:len(mu_thisgal)-1].tolist()
+        muLast.append( mu_thisgal[-1] )
+        zLast.append( zobs[idx_thisgal][-1] )
+    Ntot = len(muobs)
+    Nlead = len(muTD)
+    print( '%i leading images out of %i total images (%.1f pct)'%(
+        Nlead, Ntot, 100.*Nlead/Ntot ) )
+
+
 def main(argv):
     if argv is None :
         argv == sys.argv
