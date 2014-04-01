@@ -38,28 +38,29 @@ strong gravitational lensing causes multiple images to appear to the
 observer, separated by a time delay 
 
 \vspace{-5mm}
-\begin{tabular}{p{5.5cm}r}
+\hspace{-1.4cm}
+\begin{tabular}{p{7cm}r}
 % \dt = \frac{\Dl \Ds}{\Dls} ( 1 + z_l ) \phi
 {\begin{align}
 %\begin{equation}\label{eq:dt}
  %  \dt = \frac{\Dl \Ds}{\Dls} ( 1 + z_l ) \phi
 %\end{equation}
-  \dt &= \frac{\Dl \Ds}{c\,\Dls} ( 1 + z_L ) \phi \label{eq:dt} \\
-  \phi &= \frac{1}{2}(\theta-\beta)^2 - \psi(\theta) \label{eq:phi}
+  \dt = \frac{(1+z_L)}{c}\frac{\Dl \Ds}{\,\Dls} \phi, \label{eq:dt} \\
+\mbox{where}~~ \phi = \frac{1}{2}(\theta-\beta)^2 - \psi(\theta), \label{eq:phi}
 \end{align}}
 &
-\hspace{1cm}
-\raisebox{-30mm}{\includegraphics[width=0.5\textwidth]{FIG/lensingGeometry2}}
+\hspace{0.7cm}
+\raisebox{-30mm}{\includegraphics[width=0.52\textwidth]{FIG/lensingGeometry2}}
 %\raisebox{-30mm}{\includegraphics[width=0.5\textwidth]{FIG/lensingGeometry}}
 \end{tabular}
 
 
-\noindent where the redshift of the lens is $z_L$, while \Dl, \Ds, 
+\noindent and $z_L$ is the redshift of the lens, while \Dl, \Ds, 
 and \Dls\ are angular diamater distances from the observer to the
-lens, observer to source, and lens to source, respectively.  In the time
-delay potential, $\phi$ (Eq.~\ref{eq:phi}), the first term
-gives the geometric delay due to light rays following different path
-lengths to the observer, and the second term, $\psi$, is the
+lens, observer to source, and lens to source, respectively.  In
+Eq.~\ref{eq:phi} for the time delay potential  ($\phi$), the first
+term gives the geometric delay due to light rays following different
+path lengths to the observer, and the second term, $\psi$, is the
 relativistic component due to differing values of the gravitational
 potential along each path.
 
@@ -87,8 +88,8 @@ generally suffer from a number of serious concerns, notably: (1) the
 lensing potential is poorly constrained due to inherent degeneracies
 and insufficient constraints; (2) the time delays and angular
 separations are quite small (tens of days, fractions of an arcsecond);
-and (3) the source is continuously variable, often requiring years of
-stable monitoring to resolve phase degeneracies.  Wide-field surveys
+and (3) the source is stochastically variable, often requiring years of
+stable monitoring for the time delay measurement.  Wide-field surveys
 in the coming decade could deliver $>$100 quasar time delays, but
 these problems represent unavoidable systematic biases for this
 sample.
@@ -108,34 +109,36 @@ now has access to a much larger survey volume with each pointing.
 
 A WFC3-IR program targeting massive clusters, such as CLASH or the
 Hubble Frontier Fields, could in principal have caught a strongly
-lensed SN already, but in practice the likelihood of such a find was
-vanishingly small.  The CLASH team collected WFC3-IR imaging of 25
-clusters over 3-years, but the time separation between the first and
-last image on any single cluster was typically only a few weeks.
-However, these programs -- along with other WFC3-IR cluster imaging
-campaigns -- have now provided the second critical advance: deep IR
-template imaging of massive clusters from which to construct
-difference images for SN discovery.  These HST programs have also led
-to an explosion of detailed mass modeling for strong-lensing clusters,
-providing well-defined lensing potentials that will be crucial for
-evaluating a multiply-imaged SN when one is found.  
+lensed SN already.  CLASH, for example, collected
+WFC3-IR imaging of 25 clusters over 3 years, but the time separation
+between the first and last IR image on any single cluster was
+typically only $\sim$40 days, so in practice each cluster only had one
+epoch suitable for a lensed SN search. 
+However, CLASH and other programs have now provided the second critical
+advance: deep IR template imaging of massive clusters from which to
+construct difference images for SN discovery.  These HST programs have
+also led to an explosion of detailed mass modeling for strong-lensing
+clusters, % providing well-defined lensing potentials that will be
+which is crucial for evaluating a multiply-imaged SN when one is found.
 
-Our snapshot program will capitalize on this rich new treasury of IR
-cluster imaging in the HST archive, opening the door for a pioneering
-time delay distance measurement with the discovery of one or more
-strongly lensed SN behind a galaxy cluster.  We will target
-well-studied massive clusters that act as especially strong lenses
-(Table~\ref{tab:clusters}). For each of these clusters we have dozens
-of known multiply-imaged galaxies, and we already have
-state-of-the-art lens models in
+Our snapshot program will capitalize on this rich new treasury,
+%in the
+%HST archive, opening the door for a pioneering time delay distance
+%measurement with the discovery of one or more strongly lensed SN
+%behind a galaxy cluster.  We will 
+focusing on well-studied massive clusters
+that act as especially strong lenses (Table~\ref{tab:clusters}). For
+each of these clusters we have dozens of known multiply-imaged
+galaxies, and we already have state-of-the-art lens models in
 hand \citep[e.g.][]{Zitrin:2011a,Zitrin:2011b,Zitrin:2012a,Zitrin:2012b,Zitrin:2013}.
 Wherever a multiply-imaged SN should appear, {\bf \em we will be
 starting out with much better constraints on the lensing potential
-$\phi$} than are available for existing quasar time-delay lenses. In
-addition to improving the quality of the time-delay cosmography, this
-fore-knowledge of the lensing potential will also be crucial for
-quickly evaluating any lensed SN candidates we discover, to weed out
-impostors before investing precious follow-up time.
+$\phi$} than are available for most quasar time-delay lenses. 
+%In
+%addition to improving the quality of the time-delay cosmography, this
+%fore-knowledge of the lensing potential will also be crucial for
+%quickly evaluating any lensed SN candidates we discover, to weed out
+%impostors before investing precious follow-up time.
 
 Furthermore, {\bf \em the SN we discover behind these clusters will be
 inherently better time-delay sources} than the existing sample of
@@ -148,11 +151,12 @@ SN relative to explosion can be precisely defined from light curve
 shape and color, or from spectroscopic
 cross-correlation \citep{Filippenko:1997,Blondin:2007}.  Thus the time
 delay measurement does not require continuous long-term monitoring,
-and can be made with minimal systematic uncertainties.
-
-% Finally, if the SN is of Type Ia (a likely prospect), then light curve
-% fitting can provide a luminosity distance measurement with $\sim$8\%
-% precision \citep{Phillips:1993}.  Galaxy cluster distances can also be
+and can be made with minimal systematic uncertainties.  Finally, if
+the SN is of Type Ia (a likely prospect), then light curve fitting can
+provide a luminosity distance measurement with $\sim$8\%
+precision \citep{Phillips:1993}, and this lensed \SNIa\ could easily
+be among the most distant \SNIa\ ever seen.
+% Galaxy cluster distances can also be
 % estimated using the Sunyaev-Zeldovich effect and x-ray cluster
 % luminosities \citep{Silk:1978}.  This means that in addition to the
 % time delay distance ratio (\Dl\Ds/\Dls) we can also measure
@@ -175,74 +179,54 @@ and can be made with minimal systematic uncertainties.
 \medskip
 \noindent {\bf The HST Snapshot Search Strategy }
 
-Since Cycle 17, HST surveys of strong lensing clusters (notably CLASH
-and the Frontier Fields) have been investing hundreds of orbits in deep
-WFC3-IR imaging.  With these templates in hand, the most efficient
-way to discover high-$z$ strongly lensed SN is through a relatively
-small snapshot program.    To estimate the number of snapshots we
-need, we use a tabulation of the number of known multiply-imaged
-galaxies in the fields of our target clusters
-(Table~\ref{tab:clusters}).  This is a conservative approach, as it is
-quite possible to detect a multiply-imaged SN even if the host galaxy
-is well below the current detection thresholds for these cluster
-fields. The total yield of strongly-lensed SN per snapshot is then
-
-\begin{equation} \label{eq:Nsn}
-N_{SN} = SNR_{M} \times M_{gal} \times N_{gal} \times t_{vis},
-\end{equation}
-
-\noindent where $SNR_{M^*}$ is the SN rate per unit mass, $M_{gal}$ is
+%Since Cycle 17, HST surveys of strong lensing clusters (notably CLASH
+%and the Frontier Fields) have been investing hundreds of orbits in deep
+%WFC3-IR imaging.  With these templates in hand, the most efficient
+%way to discover a strongly lensed SN is through a relatively
+%small snapshot program.    
+To estimate the number of snapshots we need, we start with a
+tabulation of the number of known multiply-imaged galaxies in the
+fields of our target clusters (Table~\ref{tab:clusters}).  This is a
+conservative approach, as it is quite possible to detect a
+multiply-imaged SN even if the host galaxy is well below the current
+detection thresholds for these cluster fields. The total yield of
+strongly-lensed SN per snapshot is 
+$N_{SN} = SNR_{M} \times M_{gal} \times N_{gal} \times t_{vis}$. 
+Here $SNR_M$ is the SN rate per unit mass, $M_{gal}$ is
 the average mass of a multiply-imaged galaxy, $N_{gal}$ is the number
 of multiply imaged galaxies in the field, and $t_{vis}$ is the length
-of time that any given SN is visible to our snapshot survey.  Most of
-the lensed systems in our target list are at $z\sim 2$, in an era near
-the peak of the cosmic star formation history. This should substantially
-enhance the rate of both Type Ia and Type II SN, but we conservatively
-assume that our average lensed galaxy is generating SN at a rate
-similar to an Sb galaxy in our local universe: $SNR_{M} \sim 0.1$ for
-both \SNIa\ and SN II \citep{Mannucci:2005}.  We adopt an average
-stellar mass of $M_{gal}=10^{10.7} \Msun$ \citep{Tomczak:2013}, and
-use the census of multiply-imaged systems in Table~\ref{tab:clusters}
-to predict an average of $N_{gal}\sim 35$ lensed galaxy images per
+of time that any given SN is visible to our snapshot survey.  
+
+Most of the lensed systems in our target list are at $z\sim 2$, in an
+era near the peak of the cosmic star formation history, so we assume
+that our average lensed galaxy is generating SN at a rate similar to
+an Sc galaxy in our local universe: $SNR_{M} \sim0.2
+(100 \mbox{yr})^{-1} (10^{10} \Msun)^{-1}$ for \SNIa\ and $0.7
+(100 \mbox{yr})^{-1} (10^{10} \Msun)^{-1}$ for Type
+II \citep{Mannucci:2005}.  We adopt an average stellar mass of
+$M_{gal}=10^{10.7} \Msun$ \citep{Tomczak:2013}, and use the census of
+multiply-imaged systems in Table~\ref{tab:clusters} to predict an
+average of $N_{gal}\sim 35$ lensed galaxy images per
 cluster.\footnote{Note that we count each separate image of a
-multiple-image set except the last one (typically the most highly
-magnified).  The time delay between each image is of order months or
-years, so each snapshot is essentially observing the same galaxy at
-multiple widely-spaced epochs that can be treated as independent for
-the purpose of SN discovery. The last image is not counted because we
-can not measure a time delay from the last appearance of a
-multiply-imaged SN.}
+multiple-image set except the last one (we can't measure a time delay
+from the last appearance). The time delay between each image is of
+order months or years, so each snapshot is essentially observing the
+same galaxy at several widely-spaced epochs that can be treated as
+independent.}  Using simulated SN light curves in 240 multiply-imaged
+galaxies (Figure~\ref{fig:tvis}), we find an average $t_{vis}\sim 30$
+days for \SNIa\ and $\sim$20 days for SN II.
 
-%\begin{wrapfigure}{r}{0.3\textwidth}
-%\minipage[r]{0.29\textwidth}
-   \input{detectionLimits}
-%\end{minipage}
-%\end{wrapfigure}
 
-To maximize the flexibility for scheduling, we consider snapshots with
-12, 20 and 30 minutes of exposure time ($\sim$22, 30, and 40 min with
-overhead).  These snapshots reach a depth of 25-26 AB mag in the F110W
-and F140W filters (Table~\ref{tab:detectionLimits}).  To describe a
-realistic distribution of SN visibility times, $t_{vis}$, we use a
-census of magnifications and redshifts from all multiply-imaged
-galaxies in three of our primary cluster targets
-(Figure~\ref{fig:tvis}).  We then use simulated SN light curves to
-measure the length of time each SN stays above our detection
-threshold, finding an average $t_{vis}\sim 30$ days for \SNIa\ and
-$\sim$20 days for SN II.
-
-Inserting these estimates into Eq.~\ref{eq:Nsn}, we find $N_{SN}\sim
-0.02$ SN per snapshot, including both Type Ia and II.  To give this
-program a realistic chance at discovering a strongly lensed SN in
-Cycle 22, we request 200 snapshots, which would yield a sample of
-$\sim 4 ^{+3}_{-2}$ SN in one year if all snaps were executed.  With a
-realistic snapshot execution rate of $\sim$30\%, that sample drops to
-$\sim$one.  These are perilously small sample sizes, but given the
-conservative estimates used in this prediction, we expect that a
-200-snap allocation will be sufficient to deliver at least one
-strongly lensed SN in Cycle 22.  Even just a single detection will
-nevertheless be an extraordinary step forward for time delay
-cosmography. 
+With these relatively conservative estimates, we estimate $N_{SN}\sim
+0.1$ SN per snapshot, including both Type Ia and II.  To give this
+program a good chance at discovering a strongly lensed SN in Cycle 22,
+we request 200 snapshots.  Assuming a realistic snapshot execution
+rate of $\sim$30\%, this program should yield a sample of $\sim 6 \pm
+4$ SN in one year.  Even if our yield prediction is biased high by a
+factor of $\sim$2, we still have a better than 68\% chance to catch at
+least one.  Given the intrinsic value of each lensed SN, even just a
+single detection will nevertheless be an extraordinary step forward
+for time delay cosmography.
 
 Finally, we note that this snapshot program is designed only for
 discovery. Follow-up observations will come from accompanying GO
@@ -254,19 +238,18 @@ ground-based AO systems, or possibly JWST, depending on the length of
 the delay.
 
 
-\medskip
-\noindent{\bf Lensed \SNIa\ Probing Cluster Models} 
-We could find lensed SN Ia with significant magnification that do not
-have multiple images, adding to the sample of SN lensing probes
-(Patel+ 2014, Nordin+ 2014).  Classification and light curve
-measurement could be done with FrontierSN follow-up orbits
+% \medskip
+% \noindent{\bf Lensed \SNIa\ Probing Cluster Models} 
+% We could find lensed SN Ia with significant magnification that do not
+% have multiple images, adding to the sample of SN lensing probes
+% (Patel+ 2014, Nordin+ 2014).  Classification and light curve
+% measurement could be done with FrontierSN follow-up orbits
 
 
 \input{clusterTableColor}
 
-
-\insertfig{FIG/lightcurves.pdf}{ \label{fig:lightcurves} Lensed SN
-    light curves }
+%\insertfig{FIG/lightcurves.pdf}{ \label{fig:lightcurves} Lensed SN
+%    light curves }
 
 \insertfig{FIG/tvis_muz_30min.pdf}{\label{fig:tvis} Visibility time
 for lensed SN. }
