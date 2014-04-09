@@ -10,7 +10,7 @@
    <!--APT Output Product-->
    <!---->
    <!--APT Version: Version 22.0.2 -->
-   <!--Date: Wed Mar 26 18:20:14 GMT 2014-->
+   <!--Date: Wed Apr 09 13:40:06 GMT 2014-->
    
    <ProposalInformation
       Category="SNAP"
@@ -199,7 +199,7 @@
                
                <OpToolDataString>
                   
-                  <Value>/Users/rodney/Dropbox/APT/OP-cache/LensedSNsnapshot-v21.xml</Value>
+                  <Value>/Users/rodney/Dropbox/Proposals/MultiplyImagedSN.Proposal/APT/OP-cache/lensedSNsnap-v21.xml</Value>
                </OpToolDataString>
             </ToolDataItem>
          </ToolData>
@@ -445,7 +445,7 @@
                
                <OpToolDataString>
                   
-                  <Value>/Users/rodney/Dropbox/APT/OP-cache/LensedSNsnapshot-v30.xml</Value>
+                  <Value>/Users/rodney/Dropbox/Proposals/MultiplyImagedSN.Proposal/APT/OP-cache/lensedSNsnap-v30.xml</Value>
                </OpToolDataString>
             </ToolDataItem>
          </ToolData>
@@ -625,6 +625,251 @@
                
                <SubExposure
                   OrbitNumber="1" />
+            </SubExposures>
+         </Exposure>
+      </Visit>
+      
+      <Visit
+         Number="100"
+         Label="GO1"
+         After=""
+         Before="">
+         
+         <ToolData>
+            
+            <ToolDataItem
+               Key="OpTimeStamp">
+               
+               <OpToolDataDate>
+                  
+                  <Time>1396362853438</Time>
+               </OpToolDataDate>
+            </ToolDataItem>
+            
+            <ToolDataItem
+               Key="OpVisitCacheFile">
+               
+               <OpToolDataString>
+                  
+                  <Value>/Users/rodney/Dropbox/Proposals/MultiplyImagedSN.Proposal/APT/OP-cache/lensedSNsnap-v100.xml</Value>
+               </OpToolDataString>
+            </ToolDataItem>
+         </ToolData>
+         
+         <Comments>GO program alternative : 1 orbit visit</Comments>
+         
+         <TicData>
+            
+            <TicFileString>(Tic-Visit
+ :proposal-id 19999
+ :visit-id "100"
+ :proposal-version -1
+ :trans-version "20131031"
+ :date "01-Apr-2014 10:34:13.0"
+ :trans-errors '(:WARNINGS 0 :ERRORS 0 :HEALTH-AND-SAFETY 0
+                 :FATAL-ERRORS 0 :CONTINUABLE-FATALS 0)
+ :number-of-orbits 1
+ :saa-model "30"
+ :si-bright-earth-limb-angle 20.0
+ :data-volume 609312
+ :tdrss-contact-duration 0
+ :coron NIL
+ )
+
+(Tic-Obset
+ :proposal-id 19999
+ :visit-id "100"
+ :obset-id "100"
+ :pcs-mode "FGS"
+ )
+
+(Tic-Orbit
+ :proposal-id 19999
+ :visit-id "100"
+ :orbit-number 1
+ :pcs-time 333
+ :si-vis-utilization 2899
+ :al-overhead-at-end 0
+ :internal-dur-at-end 215
+ :dark-offset NIL
+ :dark-utilization 0
+ :max-dark-utilization 1920
+ :low-sky "N"
+ :pcs-visibility 3244
+ :pcs-gap 0
+ )</TicFileString>
+            
+            <TicDataCurrent>false</TicDataCurrent>
+            
+            <TicNumOrbits>1</TicNumOrbits>
+            
+            <TicNumOverruns>0</TicNumOverruns>
+         </TicData>
+         
+         <GuidingTolerance>
+            
+            <Angle />
+         </GuidingTolerance>
+         
+         <SeqWithin>
+            
+            <VisitList />
+         </SeqWithin>
+         
+         <OnHoldComments />
+         
+         <Exposure
+            Number="1"
+            TargetName="M0416"
+            Config="WFC3/IR"
+            Opmode="MULTIACCUM"
+            Aperture="IR"
+            SpElement="F140W"
+            NumberOfIterations="1"
+            TimePerExposure="DEF"
+            RealtimeAnalysis="false"
+            RequiresUplink="false"
+            Expand="false"
+            LowSky="false"
+            Shadow="false"
+            NewAlignment="false"
+            NewObset="false"
+            NewObsetFullAcq="false"
+            SpecialCommand="false">
+            
+            <MaxDur />
+            
+            <MinDur />
+            
+            <Comments />
+            
+            <InstrumentParameters
+               NSAMP="7"
+               SAMP-SEQ="SPARS100" />
+            
+            <SubExposures>
+               
+               <SubExposure
+                  OrbitNumber="1" />
+            </SubExposures>
+         </Exposure>
+         
+         <Exposure
+            Number="2"
+            TargetName="M0416"
+            Config="WFC3/IR"
+            Opmode="MULTIACCUM"
+            Aperture="IR"
+            SpElement="F140W"
+            NumberOfIterations="1"
+            TimePerExposure="DEF"
+            RealtimeAnalysis="false"
+            RequiresUplink="false"
+            Expand="false"
+            LowSky="false"
+            Shadow="false"
+            NewAlignment="false"
+            NewObset="false"
+            NewObsetFullAcq="false"
+            SpecialCommand="false">
+            
+            <PosTarg
+               X="0.5"
+               Y="0.5" />
+            
+            <MaxDur />
+            
+            <MinDur />
+            
+            <Comments />
+            
+            <InstrumentParameters
+               NSAMP="7"
+               SAMP-SEQ="SPARS100" />
+            
+            <SubExposures>
+               
+               <SubExposure
+                  OrbitNumber="1" />
+            </SubExposures>
+         </Exposure>
+         
+         <Exposure
+            Number="3"
+            TargetName="M0416"
+            Config="WFC3/IR"
+            Opmode="MULTIACCUM"
+            Aperture="IR"
+            SpElement="F140W"
+            NumberOfIterations="1"
+            TimePerExposure="DEF"
+            RealtimeAnalysis="false"
+            RequiresUplink="false"
+            Expand="false"
+            LowSky="false"
+            Shadow="false"
+            NewAlignment="false"
+            NewObset="false"
+            NewObsetFullAcq="false"
+            SpecialCommand="false">
+            
+            <PosTarg
+               X="-0.25"
+               Y="-0.25" />
+            
+            <MaxDur />
+            
+            <MinDur />
+            
+            <Comments />
+            
+            <InstrumentParameters
+               NSAMP="7"
+               SAMP-SEQ="SPARS100" />
+            
+            <SubExposures>
+               
+               <SubExposure
+                  OrbitNumber="1" />
+            </SubExposures>
+         </Exposure>
+         
+         <Exposure
+            Number="4"
+            TargetName="M0416"
+            Config="WFC3/IR"
+            Opmode="MULTIACCUM"
+            Aperture="IR"
+            SpElement="F140W"
+            NumberOfIterations="1"
+            TimePerExposure="DEF"
+            RealtimeAnalysis="false"
+            RequiresUplink="false"
+            Expand="false"
+            LowSky="false"
+            Shadow="false"
+            NewAlignment="false"
+            NewObset="false"
+            NewObsetFullAcq="false"
+            SpecialCommand="false">
+            
+            <PosTarg
+               X="-0.25"
+               Y="-0.25" />
+            
+            <MaxDur />
+            
+            <MinDur />
+            
+            <Comments />
+            
+            <InstrumentParameters
+               NSAMP="10"
+               SAMP-SEQ="SPARS100" />
+            
+            <SubExposures>
+               
+               <SubExposure />
             </SubExposures>
          </Exposure>
       </Visit>

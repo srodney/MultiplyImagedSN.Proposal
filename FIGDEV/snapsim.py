@@ -11,15 +11,15 @@ def do_grid_sims_Ia( clobber=False ) :
     snana.simulate.mkinputGrid('snIa_zgrid', inputfile='snIa_zgrid.input',
                                simlibfile='SNAPzgrid.simlib',
                                survey='HST', simtype='Ia',
-                               GENFILTERS='YMJNH',
+                               GENFILTERS='IZYMJNH',
                                ngrid_trest=60, genrange_trest=[-19, 40],
                                ngrid_logz=40, genrange_redshift=[0.9, 3.5],
                                ngrid_lumipar=15, genrange_salt2x1=[-2.5, 2.5],
-                               ngrid_colorpar=1, genrange_salt2c=[0, 0],
+                               ngrid_colorpar=1, genrange_salt2c=[0.3, 0.3],
                                ngrid_colorlaw=1, genrange_rv=[3.1, 3.1],
                                clobber=clobber )
     snana.simulate.mkgridsimlib('SNAPzgrid.simlib', survey='HST',
-                                field='default', bands='YMJNH',
+                                field='default', bands='IZYMJNH',
                                 clobber=clobber)
     snana.simulate.dosim('snIa_zgrid.input', perfect=True )
     simtable = snana.SimTable( 'snIa_zgrid' )
@@ -34,15 +34,15 @@ def do_grid_sims_II( clobber=False ) :
     snana.simulate.mkinputGrid('snII_zgrid', inputfile='snII_zgrid.input',
                                simlibfile='SNAPzgrid.simlib',
                                survey='HST', simtype='II',
-                               GENFILTERS='YMJNH',
+                               GENFILTERS='IZYMJNH',
                                ngrid_trest=60, genrange_trest=[-19, 40],
                                ngrid_logz=40, genrange_redshift=[0.9, 3.5],
                                ngrid_lumipar=1, genrange_salt2x1=[0, 0],
-                               ngrid_colorpar=1, GENRANGE_AV=[0,0],
+                               ngrid_colorpar=1, GENRANGE_AV=[0.5,0.5],
                                ngrid_colorlaw=1, genrange_rv=[3.1, 3.1],
                                clobber=clobber )
     snana.simulate.mkgridsimlib('SNAPzgrid.simlib', survey='HST',
-                                field='default', bands='YMJNH',
+                                field='default', bands='IZYMJNH',
                                 clobber=clobber)
     snana.simulate.dosim('snII_zgrid.input', perfect=True )
     simtable = snana.SimTable( 'snII_zgrid' )
@@ -69,9 +69,15 @@ def mk_tvis_tables_IaII( clobber=False ) :
     simIa =  do_grid_sims_Ia( clobber=clobber )
     simII = do_grid_sims_II( clobber=clobber )
 
-    for etime in [12,20,30] :
-        mk_tvis_table( simIa, filter='F140W', etime=etime, showplots=False )
-        mk_tvis_table( simII, filter='F110W', etime=etime, showplots=False )
+    for etime in [12,20,30,45,50] :
+        if etime==50 : 
+            mk_tvis_table( simIa, filter='F814W', etime=etime, showplots=False )
+            mk_tvis_table( simII, filter='F814W', etime=etime, showplots=False )
+            mk_tvis_table( simIa, filter='F850LP', etime=etime, showplots=False )
+            mk_tvis_table( simII, filter='F850LP', etime=etime, showplots=False )
+        else : 
+            mk_tvis_table( simIa, filter='F140W', etime=etime, showplots=False )
+            mk_tvis_table( simII, filter='F110W', etime=etime, showplots=False )
 
 
 def update_obstable( infile='lensed_galaxies.txt', outfile='lensed_galaxies_tvis.dat' ):
@@ -80,21 +86,22 @@ def update_obstable( infile='lensed_galaxies.txt', outfile='lensed_galaxies_tvis
     in that galaxy for 12, 20 and 30-minute snapshots.  Record the results
     to outfile.
     """
+    import os
     from astropy.io import ascii
     from astropy.table import Column
-
     from scipy import interpolate as scint
 
-    indat = ascii.read( infile )
+    indat = ascii.read( infile, header_start=-1 )
     zobs = np.abs( indat['z'] )
-    muobs = indat['mu']
+    muobs = indat['mu1']
 
     # for each of the 12, 20, and 30-minute snapshots,
     # construct a 2d interpolator for estimating tvis in the mu-z plane
-    for sntype, filter in ['Ia','F140W'],['II','F110W'] :
-        for etime in [12,20,30] :
+    for sntype, filter in [['Ia','F140W'],['II','F110W'],['Ia','F850LP'],['II','F814W']] :
+        for etime in [12,20,30,45,50] :
             tvisdatfile = 'sn%s_%s_%02imin_tvis.dat'%(sntype,filter,etime)
-            tvisdat = ascii.read( tvisdatfile, header_start=2 )
+            if not os.path.isfile( tvisdatfile ) : continue
+            tvisdat = ascii.read( tvisdatfile, header_start=-1 )
             zgrid = tvisdat['z']
             mugrid =  np.array([ int(col[-2:]) for col in tvisdat.colnames
                                  if col.startswith('tvis') ] )
@@ -243,25 +250,74 @@ def snapshot_threshold( filter='F140W', etime=30 ):
     in the given filter, for a snapshot visit with total duration of etime
     (in minutes)
 
-     # --------------------------------
-     #            etime    S/N=10
-     # Filter     [min]  [Vega mag]
-       F110W(M)    12      24.7
-       F110W(M)    20      25.0
-       F110W(M)    30      25.3
+    #            etime   S/N=5 (opt. S/N=10)
+    # Filter     [min]  [Vega mag]   [AB mag]
+      F110W       12      25.5 		 26.3
+      F110W       20      25.8 		 26.6
+      F110W       30      26.1 		 26.9
+      F110W       45      26.4 		 27.4
 
-       F140W(N)    12      24.0
-       F140W(N)    20      24.3
-       F140W(N)    30      24.6
+      F140W       12      24.8 		 25.9
+      F140W       20      25.1     	 26.2
+      F140W       30      25.4 		 26.5
+      F140W		  45	  25.9 		 27.0
 
     """
     if filter == 'F110W' :
-        if etime==12 : return( 24.7 )
-        elif etime==20 : return( 25.0 )
-        elif etime==30 : return( 25.3 )
+        if etime==12 : return( 25.5 )
+        elif etime==20 : return( 25.8 )
+        elif etime==30 : return( 26.1 )
+        elif etime==45 : return( 26.4 )
     elif filter == 'F140W' :
-        if etime==12 : return( 24.0 )
-        elif etime==20 : return( 24.3 )
-        elif etime==30 : return( 24.6 )
+        if etime==12 : return( 24.8 )
+        elif etime==20 : return( 25.1 )
+        elif etime==30 : return( 25.4 )
+        elif etime==45 : return( 25.9 )
+    elif filter == 'F814W' :
+        if etime==50 : return( 26.4 ) # Sharon, Gal-Yam et al 2010
+    elif filter == 'F850LP' :
+        if etime==50 : return( 25.2 ) # SCP : Barbary et al 2012
 
 
+def add_dt_col( indat='lensed_galaxies.txt',
+                outfile='lensed_galaxies_dt.txt', ):
+    """Compute the time delay (dt) from the column of
+    arrival times and add it as a new column in the output
+    file.
+    """
+    from astropy.io import ascii
+    from astropy.table import Column
+
+
+    # Read in the A1689 multiply imaged galaxy catalog
+    if isinstance( indat, str ) :
+        indat = ascii.read(indat, header_start=-1)
+    igal = indat['gal']
+    idx = indat['idx'] - 1
+
+    tarr1 = indat['tarr1']
+    tarr2 = indat['tarr2']
+
+    # compute the time delay for each lensed image relative
+    # to the preceding image.
+    dt1, dt2 = [], []
+    for ig in np.unique(igal):
+        idx_thisgal = idx[np.where(igal == ig)]
+
+        tarr1_thisgal = tarr1[idx_thisgal]
+        tarr2_thisgal = tarr2[idx_thisgal]
+        isort1 = np.argsort( tarr1_thisgal )
+        isort2 = np.argsort( tarr2_thisgal )
+        dt1_thisgal = np.diff( tarr1_thisgal[isort1] ).tolist() + [-1]
+        dt2_thisgal = np.diff( tarr2_thisgal[isort2] ).tolist() + [-1]
+
+        dt1 += dt1_thisgal
+        dt2 += dt2_thisgal
+
+    dt1col = Column( dt1, name='dt1' )
+    dt2col = Column( dt2, name='dt2' )
+    indat.add_column( dt1col )
+    indat.add_column( dt2col )
+
+    indat.write(outfile,format='ascii.commented_header')
+    print( "Updated table of lensed galaxies with t_vis printed to %s"%outfile)

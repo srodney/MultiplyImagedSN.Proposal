@@ -3,9 +3,12 @@
 *log
 *input
 *simlib
-*dat
-*txt
+#*dat
+#*txt
 .idea
+
+# Mac cruft
+.DS_STORE
 
 # backups 
 *~
