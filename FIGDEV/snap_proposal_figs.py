@@ -14,6 +14,71 @@ thisdir = os.path.dirname(thisfile)
 _datfile = 'lensed_galaxies.txt'
 
 
+def mkTvisHistFigs():
+
+    import plotsetup
+    plotsetup.fullpaperfig(1, [8,3])
+
+    datfile1 = 'lensed_galaxies.txt'
+    dat1 = ascii.read(datfile1, header_start=-1)
+    mu1 = dat1['mu1']
+    z1 = dat1['z']
+    dt1 = dat1['dt1']
+
+    datfile2 = 'lensed_galaxies2.txt'
+    dat2 = ascii.read(datfile2)
+    mu2 = dat2['col6']
+    z2 = dat2['col5']
+    dt2 = dat2['col1']
+    dterr2p = dat2['col2']/11.2
+    dterr2m = dat2['col3']/11.2
+    dterr2 = dat2['col4']/11.2
+
+    ax1 = pl.subplot(131)
+    z = np.append( z1, z2 )
+    dt = np.append( dt1, dt2 )
+
+    i5 = np.where( (dt>0) & (dt<5) )[0]
+    print( len(i5) / float(len(dt) ) )
+    print( len(i5) )
+    randoff = (np.random.randn( len(z) ) -0.5 ) * 0.1
+    z = z+randoff
+    pl.hist( z , normed=False, bins=np.arange(0.1,4.51,0.2), color='darkcyan')#, alpha=0.3  )
+    # pl.hist( z[i5] , bins=np.arange(0.1,4.51,0.2), color='darkorange')#, alpha=0.3  )
+    ax1.set_xlabel('Redshift')
+    ax1.set_ylabel(r'Number of Lensed Galaxy Images')
+
+    ax2 = pl.subplot(132)
+    pl.hist( dt[i5] , bins=np.arange(0.0,5.01,0.5), color='darkcyan')#, alpha=0.3  )
+    ax2.set_xlabel(r'Time Delay $\Delta$t')
+
+
+    ax3 = pl.subplot(133)
+
+    ipos = np.where( (dt2>0) )
+    # err = dterr2[i5] / dt2[i5]
+    err = dterr2[ipos] / dt2[ipos]
+    pl.hist( err ,normed=False,  bins=np.arange(0.0,3.0,0.05), color='darkcyan' )#, alpha=0.3  )
+    ax3.set_xlabel(r'Time Delay \%Error')
+
+
+    # pl.hist( z[i5] , bins=np.arange(0.1,4.51,0.2), color='darkorange', alpha=0.3  )
+    #ax3 = pl.axes( [0.5,0.5,0.4,0.4], transform=ax2.transAxes )
+    #ax3.hist( dt, bins=np.arange(0.0,0.1,0.02), color='darkorange', alpha=0.3  )
+
+    fig = pl.gcf()
+    fig.subplots_adjust(left=0.08, bottom=0.18,right=0.95, top=0.90, wspace=0.05,)
+    
+    ax1.set_xlim(0.3,4.6)
+    ax2.set_xlim([0.01, 4.99])
+    ax3.set_xlim([0.01, 0.99])
+
+
+    # ax1.set_xticklabels([1,2,3,4])
+    ax2.set_yticklabels([])
+    ax3.set_yticklabels([])
+    # return( i5, dt )
+
 def computeYield( datfile = _datfile ) : 
     """ compute the SN yield per snapshot """
     import cosmo
