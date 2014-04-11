@@ -65,15 +65,17 @@
 %  Probably before, since it has to be counted in the text page limit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\smallskip
-\newpage
+\bigskip
+%\newpage
 \setlength{\bibsep}{-2pt}
-\begin{spacing}{0.5}
+%\begin{spacing}{0.75}
 \bibliographystyle{apjbrief}
-{\footnotesize
+{%\footnotesize
+\begin{multicols}{2}
 \bibliography{bibdesk}
+\end{multicols}
 }
-\end{spacing}
+%\end{spacing}
 
 
 
